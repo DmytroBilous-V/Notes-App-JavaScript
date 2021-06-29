@@ -3,10 +3,66 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="./main.js"></script>
+    <link href="./style/icon-font.css" rel="stylesheet" />
+    <link href="./style/style.css" rel="stylesheet" />
     <title>Home Task 1</title>
   </head>
   <body>
-    <main id="app"></main>
+    <main class="notes-container">
+      <section class="active" id="active">
+        <header class="active_header">
+          <span>Name</span>
+          <span>Created</span>
+          <span>Category</span>
+          <span>Content</span>
+          <span>Dates</span>
+          <div>
+            <span class="fas fa-download"></span>
+            <span class="far fa-trash-alt"></span>
+          </div>
+        </header>
+        <div id="actile-list">
+
+        </div>
+        <button class="create-btn" id="showBtn">
+          Create Note
+        </button>
+        <form class="note-form unActive" id="newNote" name="note">
+          <label>
+            Name:
+            <input type="text" />
+          </label>
+          <label>
+            Category:
+          </label>
+          <select name="category">
+            <option value="Task">
+              Task
+            </option>
+            <option value="Randon Thought">
+              Randon Thought
+            </option>
+            <option value="Idea">
+              Idea
+            </option>
+          </select>
+          <label>
+            Content:
+            <input type="text" />
+          </label>
+          <button id="addNote" type="submit">
+            Create
+          </button>
+        </form>
+      </section>
+      <section class="archived" id="archived">
+        <header class="archived_header">
+          <span>Note Category</span>
+          <span>Active</span>
+          <span>Archived</span>
+        </header>
+      </section>
+    </main>
+    <script src="./main.js"></script>
   </body>
 </html>

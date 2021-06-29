@@ -1,0 +1,33 @@
+.notes-container {
+    margin: 20px auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.active,
+.archived{
+    padding: 5px;
+}
+.active_header,
+.archived_header {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    background-color: grey;
+    padding: 5px;
+}
+.active-list_item {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+}
+.note-form.active {
+    display: block;
+}
+.note-form.unActive {
+    display: none;
+}
