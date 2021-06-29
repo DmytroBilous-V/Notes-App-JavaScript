@@ -1,4 +1,4 @@
-import { setCreatedNote } from '../data/setNote.js';
+import { setCreatedNote } from '../data/settersNote.js';
 import { createDateNote, parseDate } from '../settings/someFunctions.js';
 
 export const toggleShowForm = (element) => {

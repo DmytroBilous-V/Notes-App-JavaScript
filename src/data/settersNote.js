@@ -5,5 +5,10 @@ const data = getDataActivList();
 
 export const setCreatedNote = (note) => {
     data.push(note);
-    initNotes(data)
+    initNotes(data);
+};
+
+export const setRemoveNote = (removeId) => {
+    data.splice(removeId, 1);
+    initNotes(data);
 };
