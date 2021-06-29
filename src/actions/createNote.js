@@ -9,9 +9,12 @@ export const toggleShowForm = (element) => {
 
 export function createNoteItem (e) {
     e.preventDefault();
-    
+
     const inputsData = getValue(this.parentNode);
+
     setCreatedNote(inputsData);
+    toggleShowForm(this.parentNode);
+    document.getElementById('addNote').setAttribute('disabled', 'disabled');
 }
 
 function getValue(element) {
@@ -28,7 +31,7 @@ function getValue(element) {
         name: selectedCategory[0].value,
         icon: getCategoryIcon(selectedCategory[0].value)
     }
-    
+    clearInpuValue(inputsValues);
     return item;
 }
 
@@ -46,5 +49,11 @@ function getCategoryIcon (value) {
         default: 
             return 'fas fa-cogs';
             breack;
+    }
+}
+
+export const clearInpuValue = (inputs) => {
+    for (let input of inputs) {
+        input.value = '';
     }
 }

@@ -28,9 +28,12 @@
           Create Note
         </button>
         <form class="note-form unActive" id="newNote" name="note">
+          <span class="input_invalid-message unShow">
+            Please set correct Name
+          </span>
           <label>
             Name:
-            <input type="text" />
+            <input type="text" required/>
           </label>
           <label>
             Category:
@@ -46,12 +49,18 @@
               Idea
             </option>
           </select>
+          <span class="input_invalid-message unShow">
+            Please set correct Content
+          </span>
           <label>
             Content:
-            <input type="text" />
+            <input type="text" required/>
           </label>
-          <button id="addNote" type="submit">
+          <button id="addNote" type="submit" disabled>
             Create
+          </button>
+          <button id="closeForm" type="button">
+            Close
           </button>
         </form>
       </section>

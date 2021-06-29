@@ -31,3 +31,20 @@
 .note-form.unActive {
     display: none;
 }
+input.valid {
+    border: 1px solid black;
+    color: black;
+}
+input.invalid {
+    border: 1px solid red;
+    color: red;
+}
+.input_invalid-message {
+    color: red;
+}
+.input_invalid-message.unShow {
+    display: none;
+}
+.input_invalid-message.show {
+    display: inline;
+}

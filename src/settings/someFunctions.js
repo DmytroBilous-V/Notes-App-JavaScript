@@ -11,3 +11,7 @@ export const createDateNote = () => {
     console.log(result);
     return result;
 };
+
+export const isValidInputValue = (value, regExpName) => {
+    return regExpName.test(value);
+}
