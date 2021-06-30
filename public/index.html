@@ -56,8 +56,11 @@
             Content:
             <input type="text" required/>
           </label>
-          <button id="addNote" type="submit" disabled>
+          <button class="active-btn" id="addNote" type="submit" disabled>
             Create
+          </button>
+          <button class="unactive-btn" id="editNote" type="submit">
+            Edit
           </button>
           <button id="closeForm" type="button">
             Close
@@ -70,6 +73,9 @@
           <span>Active</span>
           <span>Archived</span>
         </header>
+        <div id="summary-list">
+
+        </div>
       </section>
     </main>
     <script src="./main.js"></script>

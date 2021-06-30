@@ -48,3 +48,9 @@ input.invalid {
 .input_invalid-message.show {
     display: inline;
 }
+.active-btn {
+    display: inline;
+}
+.unactive-btn {
+    display: none;
+}

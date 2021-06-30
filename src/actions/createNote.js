@@ -7,17 +7,12 @@ export const toggleShowForm = (element) => {
     : element.className = "note-form unActive";
 }
 
-export function createNoteItem (e) {
-    e.preventDefault();
-
-    const inputsData = getValue(this.parentNode);
-
+export function createNoteItem (form) {
+    const inputsData = getValue(form);
     setCreatedNote(inputsData);
-    toggleShowForm(this.parentNode);
-    document.getElementById('addNote').setAttribute('disabled', 'disabled');
 }
 
-function getValue(element) {
+export function getValue(element) {
     let item = {};
     const created = createDateNote();
 
