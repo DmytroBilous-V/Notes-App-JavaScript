@@ -1,6 +1,6 @@
-import { removeNote } from '../actions/removeNote.js';
+import { removeNote, removeAllActiveNotes } from '../actions/removeNote.js';
 import { editNote } from '../actions/editNote.js';
-import { archivedNote } from '../actions/archivedNote.js';
+import { archivedNote, archivedAllActiveNotes } from '../actions/archivedNote.js';
 
 const activeList = document.getElementById("actile-list");
 
@@ -34,6 +34,8 @@ function showList (elements) {
 }
 
 function setListeners () {
+    const removeAllBtn = document.getElementsByClassName("fas fa-trash");
+    const archivedAllBtn = document.getElementsByClassName("fas fa-cloud-download-alt");
     const removeBtn = document.getElementsByClassName("far fa-trash-alt");
     const editBtn = document.getElementsByClassName("fas fa-edit");
     const archivedBtn = document.getElementsByClassName("fas fa-download");
@@ -46,4 +48,6 @@ function setListeners () {
     for (let btn of archivedBtn) {
         btn.addEventListener('click', () => archivedNote(btn));
     }
+    removeAllBtn[0].addEventListener('click', () => removeAllActiveNotes());
+    archivedAllBtn[0].addEventListener('click', () => archivedAllActiveNotes());
 }

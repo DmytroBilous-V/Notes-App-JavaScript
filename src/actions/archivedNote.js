@@ -1,5 +1,9 @@
-import { setArchivedNote } from '../data/settersNote.js';
-import { setUnarchivedNote } from '../data/settersNote.js';
+import {
+    setArchivedNote,
+    setUnarchivedNote,
+    setArchivedAllNotes,
+    setUnarchivedAllNotes
+} from '../data/settersNote.js';
 
 export const archivedNote = (btn) => {
     const archivedItem = btn.parentNode.parentNode;
@@ -13,4 +17,12 @@ export const unarchivedNote = (btn) => {
     const id = unarchivedItem.getAttribute('id');
     unarchivedItem.remove();
     setUnarchivedNote(id);
+};
+
+export const archivedAllActiveNotes = () => {
+    setArchivedAllNotes();
+};
+
+export const unarchivedAllNotes = () => {
+    setUnarchivedAllNotes();
 };

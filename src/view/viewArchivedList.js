@@ -1,5 +1,5 @@
-import { removeArchivedNote } from '../actions/removeNote.js';
-import { unarchivedNote } from '../actions/archivedNote.js';
+import { removeArchivedNote, removeAllArchivedNotes } from '../actions/removeNote.js';
+import { unarchivedNote, unarchivedAllNotes } from '../actions/archivedNote.js';
 import { archivedData } from '../data/settersNote.js';
 
 const viewArchive = document.getElementById('archived');
@@ -45,6 +45,8 @@ function showList (elements) {
 }
 
 function setListeners () {
+    const removeAllBtn = document.getElementsByClassName("fas fa-trash");
+    const archivedAllBtn = document.getElementsByClassName("fas fa-cloud-upload-alt");
     const removeBtn = document.getElementsByClassName("far fa-trash-alt");
     const archivedBtn = document.getElementsByClassName("fas fa-upload");
     for (let btn of removeBtn) {
@@ -53,4 +55,6 @@ function setListeners () {
     for (let btn of archivedBtn) {
         btn.addEventListener('click', () => unarchivedNote(btn));
     }
+    removeAllBtn[1].addEventListener('click', () => removeAllArchivedNotes());
+    archivedAllBtn[0].addEventListener('click', () => unarchivedAllNotes());
 }

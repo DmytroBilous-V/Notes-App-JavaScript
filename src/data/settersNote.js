@@ -1,6 +1,11 @@
-import { getDataActivList, getDataSummaryNotes, getDataArchivedList } from './getData.js';
+import {
+    getDataActivList,
+    getDataSummaryNotes,
+    getDataArchivedList
+} from './getData.js';
 import { initNotes } from '../view/viewActiveNotes.js';
 import { initSummaryList } from '../view/viewSummaryList.js';
+import { initArchivedNotes } from '../view/viewArchivedList.js';
 
 let data = getDataActivList();
 export let archivedData = getDataArchivedList(); 
@@ -17,6 +22,12 @@ export const setRemoveNote = (removeId) => {
             data.splice(index, 1);
         }
     });
+    initNotes(data);
+    initSummaryList(getDataSummaryNotes([data, archivedData]));
+};
+
+export const setRemoveAllActiveNotes = () => {
+    data = [];
     initNotes(data);
     initSummaryList(getDataSummaryNotes([data, archivedData]));
 };
@@ -51,6 +62,18 @@ export const setArchivedNote = (Id) => {
 
     archivedData.push(archivedItem);
     initNotes(data);
+    initArchivedNotes(archivedData);
+    initSummaryList(getDataSummaryNotes([data, archivedData]));
+};
+
+export const setArchivedAllNotes = () => {
+    data.map((el, index) => {
+        el.status = false;
+        archivedData.push(el);
+    });
+    data = [];
+    initNotes(data);
+    initArchivedNotes(archivedData);
     initSummaryList(getDataSummaryNotes([data, archivedData]));
 };
 
@@ -67,7 +90,20 @@ export const setUnarchivedNote = (Id) => {
 
     data.push(unarchivedItem);
     initNotes(data);
-    
+    initArchivedNotes(archivedData);
+    initSummaryList(getDataSummaryNotes([data, archivedData]));
+};
+
+export const setUnarchivedAllNotes = () => {
+    archivedData.map((el, index) => {
+        el.status = true;
+        data.push(el);
+    });
+
+    archivedData = [];
+
+    initNotes(data);
+    initArchivedNotes(archivedData);
     initSummaryList(getDataSummaryNotes([data, archivedData]));
 };
 
@@ -79,5 +115,13 @@ export const setRemoveArchivedNote = (Id) => {
     });
 
     initNotes(data);
+    initArchivedNotes(archivedData);
+    initSummaryList(getDataSummaryNotes([data, archivedData]));
+};
+
+export const setRemoveAllArchivedNotes = () => {
+    archivedData = [];
+    initNotes(data);
+    initArchivedNotes(archivedData);
     initSummaryList(getDataSummaryNotes([data, archivedData]));
 };

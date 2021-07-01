@@ -1,4 +1,9 @@
-import { setRemoveNote, setRemoveArchivedNote } from '../data/settersNote.js';
+import {
+    setRemoveNote,
+    setRemoveArchivedNote,
+    setRemoveAllActiveNotes,
+    setRemoveAllArchivedNotes
+} from '../data/settersNote.js';
 
 export const removeNote = (btn) => {
     const removeItem = btn.parentNode.parentNode;
@@ -13,3 +18,11 @@ export const removeArchivedNote = (btn) => {
     removeItem.remove();
     setRemoveArchivedNote(id);
 };
+
+export const removeAllActiveNotes = () => {
+    setRemoveAllActiveNotes();
+}
+
+export const removeAllArchivedNotes = () => {
+    setRemoveAllArchivedNotes();
+}
