@@ -1,4 +1,5 @@
 .notes-container {
+    position: inherit;
     margin: 20px auto;
     width: 90%;
     display: flex;
@@ -142,4 +143,23 @@ input.invalid {
 }
 .unactive-btn {
     display: none;
+}
+
+.note-form.active {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 60%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: gainsboro;
+    align-content: center;
+    padding: 100px;
+}
+
+.note-form.active input{
+    box-sizing: border-box;
+    width: 100%;
 }
