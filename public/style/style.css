@@ -6,19 +6,29 @@
     justify-content: space-between;
     height: 100vh;
 }
+.archived.unactive {
+    display: block;
+}
+.archived.unactive {
+    display: none;
+}
 .active,
-.archived{
+.archived,
+.summary {
     padding: 5px;
 }
 .active_header,
-.archived_header {
+.archived_header,
+.summary_header {
     display: flex;
     justify-content: space-around;
     color: #fff;
     background-color: grey;
     padding: 5px;
 }
-.active-list_item {
+.active-list_item,
+.archived-list_item,
+.summary-list_item {
     box-sizing: border-box;
     display: flex;
     width: 100%;

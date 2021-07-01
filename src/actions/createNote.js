@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { setCreatedNote } from '../data/settersNote.js';
 import { createDateNote, parseDate } from '../settings/someFunctions.js';
 
@@ -19,6 +20,7 @@ export function getValue(element) {
     const inputsValues = element.getElementsByTagName('input');
     const selectedCategory = element.getElementsByTagName('select');
     
+    item.id = uuidv4();
     item.name = inputsValues[0].value;
     item.created = parseDate(created);
     item.content = inputsValues[1].value;
@@ -26,6 +28,8 @@ export function getValue(element) {
         name: selectedCategory[0].value,
         icon: getCategoryIcon(selectedCategory[0].value)
     }
+    item.dates = '';
+    item.status = true;
     clearInpuValue(inputsValues);
     return item;
 }

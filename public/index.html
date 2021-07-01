@@ -24,6 +24,9 @@
         <div id="actile-list">
 
         </div>
+        <button class="archive-btn" id="showArchiveBtn">
+          Show Archive
+        </button>
         <button class="create-btn" id="showBtn">
           Create Note
         </button>
@@ -67,8 +70,28 @@
           </button>
         </form>
       </section>
-      <section class="archived" id="archived">
+      <section class="archived unactive" id="archived">
         <header class="archived_header">
+          <span>Name</span>
+          <span>Created</span>
+          <span>Category</span>
+          <span>Content</span>
+          <span>Dates</span>
+          <div>
+            <span class="fas fa-download"></span>
+            <span class="far fa-trash-alt"></span>
+          </div>
+        </header>
+        <div id="archived-list">
+
+        </div>
+        <button class="close-archive-btn" id="unshowArchiveBtn">
+          Close
+        </button>
+        
+      </section>
+      <section class="summary" id="summary">
+        <header class="summary_header">
           <span>Note Category</span>
           <span>Active</span>
           <span>Archived</span>

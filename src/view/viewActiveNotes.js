@@ -1,12 +1,13 @@
 import { removeNote } from '../actions/removeNote.js';
 import { editNote } from '../actions/editNote.js';
+import { archivedNote } from '../actions/archivedNote.js';
 
 const activeList = document.getElementById("actile-list");
 
 export const initNotes = (notes) => {
     const className ="active-list_item";
     const elementsList = notes.map((el, index) => {
-        return `<div class="${className}" id="${index}">
+        return `<div class="${className}" id="${el.id}">
             <span class="${el.category.icon}"></span>
             <input value="${el.name}" readonly/>
             <span>${el.created}</span>
@@ -35,10 +36,14 @@ function showList (elements) {
 function setListeners () {
     const removeBtn = document.getElementsByClassName("far fa-trash-alt");
     const editBtn = document.getElementsByClassName("fas fa-edit");
+    const archivedBtn = document.getElementsByClassName("fas fa-download");
     for (let btn of removeBtn) {
         btn.addEventListener('click', () => removeNote(btn));
     }
     for (let btn of editBtn) {
         btn.addEventListener('click', () => editNote(btn));
+    }
+    for (let btn of archivedBtn) {
+        btn.addEventListener('click', () => archivedNote(btn));
     }
 }
