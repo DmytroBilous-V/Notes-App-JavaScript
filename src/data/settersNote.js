@@ -22,11 +22,13 @@ export const setRemoveNote = (removeId) => {
 };
 
 export const setEditNote = (editItem, id) => {
+
     data.map((el, index) => {
         if (el.id == id) {
             el.name = editItem.name;
             el.content = editItem.content;
-            el.category = editItem.category;
+            el.category.name = editItem.category.name;
+            el.category.icon = editItem.category.icon;
             el.dates = `${el.created.split(' ').join('/')}, ${editItem.created.split(' ').join('/')}`;
             el.created = editItem.created;
             data[index] = el;

@@ -73,7 +73,6 @@ export function editForm (inputsData) {
     changeInput[0].value = inputsData[0].value;
     changeInput[1].value = inputsData[2].value;
     selectInput[0].value = inputsData[1].value;
-    
     toggleShowForm(formNote);
 }
 

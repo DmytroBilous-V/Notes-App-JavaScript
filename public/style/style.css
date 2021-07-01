@@ -26,6 +26,84 @@
     background-color: grey;
     padding: 5px;
 }
+.header-btn {
+    width: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.active_header span,
+.archived_header span {
+    width: 15%;
+    text-align: center;
+}
+.summary_header span {
+    width: 30%;
+    text-align: center;
+}
+.active_header::before,
+.archived_header::before,
+.summary_header::before {
+   content: '';
+   width: 5%;
+}
+.archived-list_item input,
+.archived-list_item span,
+.active-list_item input,
+.active-list_item span {
+    width: 15%;
+    text-align: center;
+}
+.active-list_item__btn-block {
+    width: 10%;
+    max-width: 60px;
+    min-width: 56px;
+    display: flex;
+}
+.active-list_item .active-list_item__btn-block span.fas.fa-edit {
+    width: 33%;
+    text-align: center;
+}
+.archived-list_item__btn-block {
+    width: 10%;
+    max-width: 40px;
+    min-width: 36px;
+    display: flex;
+}
+.archived-list_item .archived-list_item__btn-block span.fas.fa-upload {
+    width: 50%;
+    text-align: center;
+}
+.archived-list_item .archived-list_item__btn-block span {
+    width: 50%;
+    text-align: center;
+}
+.active-list_item .active-list_item__btn-block span {
+    width: 33%;
+    text-align: center;
+}
+.archived-list_item span:first-child,
+.active-list_item span:first-child,
+.summary-list_item span:first-child {
+    width: 5%;
+    text-align: center;
+}
+.summary-list_item span {
+    width: 30%;
+    text-align: center;
+}
+.active-list_item input,
+.archived-list_item input {
+    border: none;
+    outline: none;
+}
+.active-list_item input:hover,
+.archived-list_item input:hover {
+    cursor: inherit;
+}
+.active-list_item input:focus,
+.archived-list_item input:focus {
+    outline: none;
+}
 .active-list_item,
 .archived-list_item,
 .summary-list_item {
@@ -33,6 +111,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     padding: 5px;
 }
 .note-form.active {

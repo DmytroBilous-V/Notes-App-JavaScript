@@ -11,6 +11,6 @@ export const editNote = (btn) => {
     editForm(inputsData);
 };
 export function editNoteItem (form) {
-    const inputsData = getValue(form);
-    setEditNote(inputsData, id);
+    const inputData = getValue(form);
+    setEditNote(inputData, id);
 };

@@ -26,7 +26,7 @@ export const initArchivedNotes = (notes) => {
             <input value="${el.category.name}" readonly/>
             <input value="${el.content}" readonly/>
             <span>${el.dates}</span>
-            <div class="active-list_item__btn-block">
+            <div class="archived-list_item__btn-block">
                 <span class="fas fa-upload"></span>
                 <span class="far fa-trash-alt"></span>
             </div>
