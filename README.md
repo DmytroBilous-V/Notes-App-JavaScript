@@ -1,2 +1,13 @@
-# Radency-task-1
-Hometask#1 - Notes
+# Notes app
+```
+git clone or download repositori
+```
+## Project setup
+```
+npm install
+```
+
+### Compiles and run serve for development
+```
+npm start
+```
